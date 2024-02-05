@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 
-// app.use(express.static(path.join(__dirname, '../Client/build')));
+app.use(express.static(path.join(__dirname + '/public')));
 
 // app.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '.build', 'index.html'));
@@ -52,7 +52,6 @@ app.post("/ticket/register", dbConnectionMiddleware, (req, res) => {
 })
 
 app.post("/ticket/login", dbConnectionMiddleware, (req, res) => {
-    console.log(req.body);
     controller.login(req, res)
 })
 
